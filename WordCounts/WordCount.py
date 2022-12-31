@@ -24,15 +24,16 @@ withoutNewLines = removeExtraParagraphs.sub("", text)
 characters = len(withoutNewLines)
 
 # Count number of full sentences
-toCheckSentences = re.compile(r"[^\.]")
+endings = [".", "?", "!"]
+toCheckSentences = re.compile(r"[^\.?!]")
 onlyPeriodsFull = toCheckSentences.sub("", text.strip()[1:])
 # I am indexing [1:] because I am not counting a period at the beginning as a full sentence
 fullSentences = len(onlyPeriodsFull)
 
 # Count number of partial sentences (Beginning and end can be partial)
-partialText = text if text.strip()[-1] == "." else text + "."
-onlyPeriodsPartial = toCheckSentences.sub("", partialText)
-partialSentences = len(onlyPeriodsPartial)
+partialSentences = 0
+if text.strip()[-1] not in endings: partialSentences += 1
+if text.strip()[0] in endings: partialSentences += 1
 
 
 print("Number of characters:", characters)
