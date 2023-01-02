@@ -1,5 +1,5 @@
 # Grammar Checker Mini Project
-## What it does
+## About
 This project takes what the user has on their clipboard, fixes some of the grammar, and then pastes the updated results back to the clipboard. The specific grammar it will change are:
 * The word "I" will be capitalized
 * Unnecessary spaces will be removed
