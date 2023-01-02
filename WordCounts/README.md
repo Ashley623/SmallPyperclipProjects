@@ -1,5 +1,5 @@
 # Word Counts Mini Project
-## What it does
+## About
 This project takes what text you have on your clipboard when it is run, and prints out the following information regarding the specified test:
 * Characters- The number of characters in the text, including spaces and tabs but excluding the newline characters
 * Characters excluding whitespace- The number of characters in the text excluding tabs, spaces, and the newline characters
