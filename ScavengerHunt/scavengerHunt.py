@@ -11,7 +11,8 @@ for i in range(len(questions)):
     print(questions[i])
     correct = False
     for j in range(3): # Loops through the 3 different tries for each question
-        pc.waitForNewPaste() # This pauses the program until the user copies something new
+        pc.waitForNewPaste(300) # This pauses the program until the user copies something new
+        # Times out after 5 min in case the user forgets to stop the program from running
         if(pc.paste().strip()[:len(answers[i])] == answers[i] or pc.paste().strip()[-len(answers[i]):] == answers[i]):
             # The copied text is striped, and then only the beginning part or the last part are looked at in case
             #   the user copies extra characters aside from the answer (like a period)
